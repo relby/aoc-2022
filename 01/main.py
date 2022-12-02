@@ -1,4 +1,4 @@
-def part1(text):
+def part1(text: str) -> int:
     elf_calories = (
         sum(map(int, elf.split()))
         for elf in text.split('\n\n')
@@ -6,7 +6,7 @@ def part1(text):
     return max(elf_calories)
 
 
-def part2(text):
+def part2(text: str) -> int:
     elf_calories = (
         sum(map(int, elf.split()))
         for elf in text.split('\n\n')
@@ -14,7 +14,7 @@ def part2(text):
     return sum(sorted(elf_calories, reverse=True)[:3])
 
 
-def main():
+def main() -> None:
     with open('input.txt') as input_file:
         text = input_file.read()
     print('Part 1: {0}'.format(part1(text)))
